@@ -1,0 +1,6 @@
+autoload
+bin
+bundle
+undo
+*.un~
+*.swp
