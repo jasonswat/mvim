@@ -63,15 +63,6 @@ set cmdheight=2       " # of lines for the command window
 set number            " show line numbers
 set confirm           " ask to save buffer when executing command that close buffers
 
-" Define characters to show when you show formatting
-" stolen from https://github.com/tpope/vim-sensible
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-  if &termencoding ==# 'utf-8' || &encoding ==# 'utf-8'
-    let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u26ad"
-  endif
-endif
-
 " ----------------------------------------------------------------------------
 "  lightline.vim, lightline.ale and ALE settings
 " ----------------------------------------------------------------------------
@@ -115,8 +106,11 @@ let g:lightline = {
 " ----------------------------------------------------------------------------
 "  multiple windows
 " ----------------------------------------------------------------------------
-set hidden        " allow switching away from current buffer w/o
-                  " writing
+set laststatus=2  	  " Show a status line, even if there's only one
+                      " Vim window
+
+set hidden		    	  " allow switching away from current buffer w/o
+                      " writing
 
 set switchbuf=usetab  " Jump to the 1st open window which contains
                       " specified buffer, even if the buffer is in
@@ -138,3 +132,23 @@ set statusline+=\ <\ %p%%
 set statusline+=\ %l:
 set statusline+=%02.3c   	" cursor line/total lines
 set helpheight=30         " Set window height when opening Vim help windows
+set ttyfast			     
+
+" ----------------------------------------------------------------------------
+"  tabs and indenting
+" ----------------------------------------------------------------------------
+set tabstop=2             " tab = 2 spaces
+set shiftwidth=2          " autoindent indents 2 spaces
+set smarttab              " <TAB> in front of line inserts 'shiftwidth' blanks
+set softtabstop=2
+set shiftround            " round to 'shiftwidth' for "<<" and ">>" 
+set expandtab
+
+" ----------------------------------------------------------------------------
+"  folding
+" ----------------------------------------------------------------------------
+if has('folding')
+  set nofoldenable 		    " When opening files, all folds open by default
+endif
+
+set foldtext=NeatFoldText()

@@ -1,0 +1,12 @@
+:newtab  # open a new tab
+:tablast # jump to last tab
+
+# verticle split line
+# give . as an arg and it opens a file browser
+:vsp . 
+# if you put the cursor on a file use the following ways to open:
+o # top open in current split
+O # open in previous split
+t # open in new tab
+v # open in verticlly aligned window
+:Ex # file explorer

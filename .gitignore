@@ -1,6 +1,13 @@
 autoload
-bin
-bundle
 undo
+.vagrant
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
 *.un~
-*.swp
+Gemfile.lock
+bin/*
+.bundle/*
+.DS_Store

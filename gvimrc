@@ -5,7 +5,6 @@ set lines=99 columns=178
 set guioptions-=T               " Remove toolbar
 set guioptions-=t               " Remove tear-off menus
 set guioptions+=c               " Use :ex command-mode prompts instead of modal
-                    " dialogs
 
 if has("gui_macvim")
   " set guifont=Anonymous\ Pro:h14
@@ -22,9 +21,3 @@ nnoremap <S-Space> <PageUp>
 autocmd VimEnter * NERDTree
 " NERDTree leave swp files all over the place
 set noswapfile
-
-if has("autocmd")
-  " Automatically resize viewport splits when resizing MacVim window
-  autocmd VimResized * wincmd =
-  autocmd VimEnter * NERDTree
-endif
