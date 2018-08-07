@@ -10,4 +10,5 @@ undo
 Gemfile.lock
 bin/*
 .bundle/*
+bundle/*
 .DS_Store
